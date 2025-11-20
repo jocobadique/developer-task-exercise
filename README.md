@@ -7,7 +7,6 @@ Built with:
 - **Backend:** Django REST Framework  
 - **Database:** Google Cloud Firestore (Datastore Mode)  
 - **Frontend:** Vue 3 + Vite + Tailwind  
-- **Calendar:** FullCalendar  
 - **Deployment:** Cloud Run (backend) + Firebase Hosting (frontend)
 
 ---
@@ -236,5 +235,5 @@ npm run test
 # 👨‍💻 Author  
 **Joco Badique**  
 Software Engineer  
-Email: *your email here*
+Email: Joco Badique
 
