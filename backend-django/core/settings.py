@@ -126,10 +126,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://shifts-api-677395117226.asia-southeast1.run.app/",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
