@@ -119,7 +119,6 @@ http://127.0.0.1:8000/api/
 ## 📌 Features
 - Worker management UI  
 - Shift management UI  
-- Calendar view using **FullCalendar**
 - Searchable **Timezone selector**
 - Searchable **Worker selector**
 - Form validation  
