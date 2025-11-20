@@ -63,7 +63,7 @@
         <div>
           <p class="font-semibold">Worker: {{ s.worker_id }}</p>
           <p>{{ s.start }} → {{ s.end }}</p>
-          <p class="text-sm text-gray-600">{{ s.duration_hours }} hours</p>
+          <p class="text-sm text-gray-600">{{ s.duration_hours }} hour</p>
         </div>
 
         <div class="flex gap-2">
