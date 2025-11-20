@@ -31,30 +31,41 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import { timezones } from "../data/timezones";
 
-const model = defineModel<string>(); // v-model for parent
+const model = defineModel<string>();
 
 const open = ref(false);
 const query = ref("");
 
-// Filter timezones based on search query
+// Filter timezones
 const filtered = computed(() => {
   if (!query.value) return timezones;
-  return timezones.filter((tz: any) =>
+  return timezones.filter((tz: string) =>
     tz.toLowerCase().includes(query.value.toLowerCase())
   );
 });
 
-// Select a timezone
+// When user selects a timezone
 const select = (tz: string) => {
   model.value = tz;
   query.value = tz;
   open.value = false;
 };
 
-// Close dropdown when clicking outside
+// Sync with store value ONLY when closed
+watch(
+  () => model.value,
+  (val) => {
+    if (!open.value && val) {
+      query.value = val;
+    }
+  },
+  { immediate: true }
+);
+
+// Close on outside click
 onMounted(() => {
   document.addEventListener("click", (e) => {
     if (!(e.target as HTMLElement).closest(".relative")) {
